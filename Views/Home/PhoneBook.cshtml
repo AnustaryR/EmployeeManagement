@@ -1,0 +1,87 @@
+﻿@page
+@model EmployeeManagement.Views.Home.PhoneBookModel
+@{
+    ViewData["Title"] = "Phone Book";
+} 
+
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="card-body">
+
+        <div class="row gutters">
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group" style="display:none;">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="phoneBook.ContactName" class="control-label"></label><span class="inputrequired">*</span>
+                    <i class="icon icon-info-with-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Contact Name"></i>
+                    <input asp-for="phoneBook.ContactName" class="form-control" style="border-radius: 10px;font-size:1.14rem;" />
+                    <span asp-validation-for="phoneBook.ContactName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="phoneBook.NickName" class="control-label"></label><span class="inputrequired">*</span>
+                    <i class="icon icon-info-with-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nick Name"></i>
+                    <input asp-for="phoneBook.NickName" class="form-control" style="border-radius: 10px;font-size:1.14rem;" />
+                    <span asp-validation-for="phoneBook.NickName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="phoneBook.PhoneNumber" class="control-label"></label><span class="inputrequired">*</span>
+                    <i class="icon icon-info-with-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Phone Number"></i>
+                    <input asp-for="phoneBook.PhoneNumber" class="form-control" style="border-radius: 10px;font-size:1.14rem;" />
+                    <span asp-validation-for="phoneBook.PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="text-right">
+                    <style>
+                        .btn-home {
+                            border-radius: 999px; /* Use a high value for a circular shape */
+                            padding: 12px 28px; /* Increased padding for better visual balance */
+                            border: none; /* Remove the border for a cleaner look */
+                            background: linear-gradient(135deg, #0070B0, #003F7F); /* Gradient background */
+                            color: #fff;
+                            font-size: 1.12rem;
+                            font-weight: bold; /* Make the text bold */
+                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slightly adjust the shadow */
+                            transition: background-color 0.3s ease; /* Add a smooth transition */
+                            cursor: pointer; /* Show pointer cursor on hover */
+                        }
+
+                            .btn-home:hover {
+                                background: linear-gradient(135deg, #003F7F, #0070B0);
+                            }
+                        /*									.btn-home:hover{
+                                                                color: white;
+                                                            }*/
+                        .btn-home-cancel {
+                            background: transparent;
+                            color: black;
+                            /*background: linear-gradient(135deg, wheat, white);*/
+                        }
+
+                            .btn-home-cancel:hover {
+                                /*color: whitesmoke;*/
+                                background: white
+                            }
+                    </style>
+
+                    <div class="text-right">
+                        <input type="submit" value="Save" class="btn btn-home" style="font-size: 1.12rem;" />
+                        <input type="button" value="Cancel" class="btn btn-home btn-home-cancel" style="font-size: 1.12rem;" />
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</form>

@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "/views/shared/_Layout.cshtml";
+}
+<div class="row ">
+    <div class="">
+       
+           
+            <div class="card-body">
+                <div class="row ">
+                    <div class="col-10 ">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+</div>
+@section Scripts{
+    @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        $(function () {
+            const currentPage = location.pathname;
+            $('.nav-tabs li a').each(function () {
+                const $this = $(this);
+                if (currentPage.toLowerCase().indexOf($this.attr('href').toLowerCase()) !== -1{
+                    $this.addClass('active');
+                }
+            })
+        })
+    </script>
+}
